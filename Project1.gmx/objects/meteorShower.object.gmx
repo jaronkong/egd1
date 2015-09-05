@@ -34,14 +34,16 @@ randomTime = 3;
 
 speedTween = 0.1;
 minSpeed = 1;
+meteorSpeed = 20;
+meteorWidth = 1;
+meteorAngle = 250;
+tailFactor = 8;
 
 meteorList = ds_list_create();
 
 enum METEOR {
     X,
     Y,
-    PREV_X,
-    PREV_Y,
     DIR,
     SPEED,
     NUM_PROPERTIES
@@ -102,9 +104,6 @@ for ( var i = 0; i &lt; ds_list_size( meteorList ); i += METEOR.NUM_PROPERTIES )
     var tCurrentX = meteorList[| i + METEOR.X];
     var tCurrentY = meteorList[| i + METEOR.Y];
     var tSpeed = meteorList[| i + METEOR.SPEED];
-    
-    meteorList[| i + METEOR.PREV_X] = tCurrentX;
-    meteorList[| i + METEOR.PREV_Y] = tCurrentY;
     
     tCurrentX += lengthdir_x( tSpeed, tDir );
     tCurrentY += lengthdir_y( tSpeed, tDir );
@@ -182,12 +181,11 @@ if ( timer &lt;= 0 ) {
             <string>///Create Meteor
 
 var tRandX = random( room_width );
-var tRandY = random( room_height * 0.75 )
+var tRandY = random( room_height * 0.3 )
 
 ds_list_add( meteorList,
                 tRandX, tRandY,
-                tRandX, tRandY,
-                250, 20 );
+                meteorAngle, meteorSpeed );
                 
 
 </string>
@@ -214,14 +212,18 @@ ds_list_add( meteorList,
             <kind>1</kind>
             <string>///Draw
 
+draw_set_alpha( 0.7 );
 draw_set_color( c_white );
 for ( var i = 0; i &lt; ds_list_size( meteorList ); i += METEOR.NUM_PROPERTIES ) {
     var tCurrentX = meteorList[| i + METEOR.X];
     var tCurrentY = meteorList[| i + METEOR.Y];
-    var tPrevX = meteorList[| i + METEOR.PREV_X];
-    var tPrevY = meteorList[| i + METEOR.PREV_Y];
+    var tSpeed = meteorList[| i + METEOR.SPEED];
+    var tDir = meteorList[| i + METEOR.DIR];
     
-    draw_line( tPrevX, tPrevY, tCurrentX, tCurrentY );
+    draw_line_width( tCurrentX, tCurrentY, 
+                    tCurrentX + lengthdir_x( tSpeed * tailFactor, tDir + 180), 
+                    tCurrentY + lengthdir_y( tSpeed * tailFactor, tDir + 180), 
+                    meteorWidth );
 }
 
 </string>
