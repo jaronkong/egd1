@@ -96,6 +96,7 @@
       <script>scripts\timelineWasTime.gml</script>
       <script>scripts\timelineNotYetTime.gml</script>
       <script>scripts\timelineGetValue.gml</script>
+      <script>scripts\timelineLoadValues.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
