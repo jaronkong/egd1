@@ -1,6 +1,7 @@
 [0]
 next = 1
 bar = 0
+barGradient = 1
 spawnRate = 0
 visibleTime = 4
 
@@ -17,10 +18,12 @@ visibleTime = 1
 
 [10]
 next = 15
+bar = 0.125
 spawnRate = 0
 
 [15]
 next = 120
+bar = 0.125
 spawnRate = 3
 visibleTime = 2
 
