@@ -112,6 +112,17 @@ draw_set_alpha( flashAlpha );
 draw_rectangle( view_xview, view_yview, 
                 view_xview + view_wview, view_yview + view_hview, false );
 
+var tSpriteWidth = sprite_get_width( floorGradient_spr );
+var tSpriteHeight = sprite_get_height( floorGradient_spr );
+
+var tFieldCenter = controller.fieldCenter;
+var tFieldWidth = controller.fieldWidth;
+
+draw_sprite_ext( floorGradient_spr, 0, tFieldCenter, view_yview + view_hview,
+                    tFieldWidth / tSpriteWidth, 400 / tSpriteHeight, 
+                    0, c_white, flashAlpha * 2 );
+
+                
 </string>
           </argument>
         </arguments>
