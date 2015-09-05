@@ -28,6 +28,41 @@
             <string>///Setup
 
 aimDir = 0;
+fireTimer = 0;
+fireRate = room_speed * 0.4
+
+laserResolution = 32;
+
+system1 = part_system_create();
+bloom_attachParticleSystem( system1, -50 );
+refracton_attachParticleSystem( system1 );
+distortionGlow_attachParticleSystem( system1 );
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Clean up
+
+part_system_destroy( system1 );
 
 </string>
           </argument>
@@ -78,13 +113,31 @@ aimDir = point_direction( x, y, mouse_x, mouse_y );
             <string>///Shoot
 
 if ( mouse_check_button_pressed( mb_left ) ) {
-    with ( ball ) {
-        if( isCircleHitByLine( other.x, other.y, other.aimDir, x, y, radius ) ) {
-            destroyBall( id );
+    if ( fireTimer &lt;= 0 ) {
+        fireTimer = fireRate;
+        audio_play_sound( shoot_sd, 1, false );
+        
+        part_type_direction( getParticle( "laserLine" ), aimDir, aimDir, 0, 0 );
+        for ( var i = 0; i &lt; room_width; i += laserResolution ) {
+
+            part_particles_create( system1,
+                                    x + lengthdir_x( i, aimDir ),
+                                    y + lengthdir_y( i, aimDir ),
+                                    getParticle( "laserLine" ), 2 );
         }
+    
+        with ( ball ) {
+            if( isCircleHitByLine( other.x, other.y, other.aimDir, x, y, radius ) ) {
+                destroyBall( id );
+            }
+        }
+        
     }
 }
 
+if ( fireTimer &gt; 0 ) {
+    fireTimer --;
+}
 </string>
           </argument>
         </arguments>

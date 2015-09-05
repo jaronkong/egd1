@@ -30,6 +30,7 @@
     <sound>sound\subHit_sd</sound>
     <sound>sound\Starfall_bgm</sound>
     <sound>sound\shatter_sd</sound>
+    <sound>sound\shoot_sd</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
