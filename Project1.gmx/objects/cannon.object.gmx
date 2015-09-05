@@ -121,6 +121,7 @@ aimDir = point_direction( x, y, mouse_x, mouse_y );
 if ( mouse_check_button_pressed( mb_left ) ) {
     if ( fireTimer &lt;= 0 ) {
         fireTimer = fireRate;
+        pushScreen( aimDir, 2.5 );
         audio_play_sound( shoot_sd, 1, false );
         
         part_type_direction( getParticle( "laserLine" ), aimDir, aimDir, 0, 0 );
@@ -138,6 +139,7 @@ if ( mouse_check_button_pressed( mb_left ) ) {
                 with ( other ) {
                     fireTimer = fireQuickTime;
                 }
+                pushScreen( random( 360 ), 7.5 );
             }
         }
         
