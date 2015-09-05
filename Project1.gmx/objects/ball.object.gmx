@@ -162,7 +162,7 @@ if ( instance_exists( controller ) ) {
             <kind>1</kind>
             <string>///Exiting Screen
 
-if ( y &gt; room_width ) {
+if ( y &gt; room_height ) {
     endGame();
     with ( ball ) {
         instance_destroy();

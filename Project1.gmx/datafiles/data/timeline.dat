@@ -1,16 +1,13 @@
 [0]
-next = 0.8
+next = 0.1
 
 bar = 1
 barGradient = 1
 
-spawnBurst = 0
-spawnBurstIndex = 0
-
-spawnRate = 0
+spawnRate = 0.25
 spawnAngleMin = 15
 spawnAngleMinGradient = 1
-spawnAngleMax = 60
+spawnAngleMax = 40
 spawnAngleMaxGradient = 1
 
 visibleTime = 2
@@ -18,46 +15,133 @@ visibleTime = 2
 meteorRate = 0.5
 meteorRateGradient = 1
 
-[0.8]
-next = 1
+[0.1]
+next = 12
 bar = 0
-meteorRate = 0.75
 
-[1]
-next = 5
-bar = 0
-spawnRate = 0.5
-spawnBurst = 3
-spawnBurstIndex = 1
-meteorRate = 3
+[12]
+next = 24
 
-[5]
-next = 10
-bar = 0.1
-spawnRate = 0.75
-spawnAngleMin = 5
-spawnAngleMax = 45
-visibleTime = 0.05
-meteorRate = 25
+spawnRate = 0.3
+spawnAngleMin = 15
+spawnAngleMinGradient = 1
+spawnAngleMax = 30
+spawnAngleMaxGradient = 1
+
+visibleTime = 1
+
+meteorRateGradient = 1
+meteorRate = 2.7
+
+[24]
+next = 36
+
+spawnBurst = 2
+spawnBurstIndex = 0
+
+spawnAngleMax = 40
+spawnAngleMaxGradient = 1
+
+spawnRate = 1
+meteorRate = 5
+
+[36]
+next = 48
+
+spawnAngleMin = 15
+spawnAngleMinGradient = 1
+spawnAngleMax = 30
+spawnAngleMaxGradient = 1
+
+visibleTime = 0.8
+
+spawnRate = 0.8
+meteorRate = 2.7
 meteorRateGradient = 0
 
-[10]
-next = 15
-bar = 0.125
-spawnRate = 0
-spawnBurst = 10
-spawnBurstIndex = 2
-meteorRate = 1
+[48]
+next = 59
 
-[15]
-next = 120
-bar = 0.125
-spawnRate = 0.5
-spawnAngleMin = 30
-spawnAngleMax = 60
-visibleTime = 0.1
+spawnAngleMin = 10
+spawnAngleMinGradient = 1
+spawnAngleMax = 20
+spawnAngleMaxGradient = 1
+
+visibleTime = 2
+
+spawnRate = 1
+meteorRate = 0.9
+meteorRateGradient = 0
+
+[59]
+next = 72
+
+spawnAngleMin = 15
+spawnAngleMinGradient = 1
+spawnAngleMax = 30
+spawnAngleMaxGradient = 1
+
+visibleTime = 0.5
+
+spawnRate = 1
 meteorRate = 2
-meteorRateGradient = 1
+meteorRateGradient = 0
 
-[120]
+[72]
+next = 83
+
+spawnAngleMin = 25
+spawnAngleMinGradient = 1
+spawnAngleMax = 40
+spawnAngleMaxGradient = 1
+
+visibleTime = 0.5
+
+spawnRate = 0.4
+meteorRate = 2
+meteorRateGradient = 0
+
+[83]
+next = 95
+
+spawnAngleMin = 10
+spawnAngleMinGradient = 1
+spawnAngleMax = 30
+spawnAngleMaxGradient = 1
+
+visibleTime = 1
+
+spawnRate = 0.4
+meteorRate = 1.5
+meteorRateGradient = 0
+
+[95]
+next = 107
+
+spawnBurst = 2
+spawnBurstIndex = 1
+
+spawnAngleMin = 15
+spawnAngleMinGradient = 1
+spawnAngleMax = 30
+spawnAngleMaxGradient = 1
+
+visibleTime = 0.5
+
+spawnRate = 0.6
+meteorRate = 6
+meteorRateGradient = 0
+
+[107]
 bar = 1
+
+spawnAngleMin = 15
+spawnAngleMinGradient = 1
+spawnAngleMax = 30
+spawnAngleMaxGradient = 1
+
+visibleTime = 0.5
+
+spawnRate = 0.2
+meteorRate = 0.5
+meteorRateGradient = 1
