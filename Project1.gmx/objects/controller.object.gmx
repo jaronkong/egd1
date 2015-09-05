@@ -120,6 +120,8 @@ instance_create( 0, 0, timelineController );
 instance_create( 0, 0, spawnController );
 
 instance_create( 0, 0, progressBar );
+
+instance_create( 0, 0, meteorShower );
 </string>
           </argument>
         </arguments>
@@ -147,6 +149,7 @@ instance_create( 0, 0, progressBar );
 with ( timelineController ) instance_destroy( );
 with ( spawnController ) instance_destroy( );
 with ( progressBar ) instance_destroy( );
+with ( meteorShower ) instance_destroy( );
 </string>
           </argument>
         </arguments>

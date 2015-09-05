@@ -12,27 +12,35 @@ spawnAngleMaxGradient = 1
 
 visibleTime = 2
 
+meteorRate = 0.5
+meteorRateGradient = 1
+
 [0.8]
 next = 1
 bar = 0
+meteorRate = 0.75
 
 [1]
 next = 5
 bar = 0
 spawnRate = 0.5
+meteorRate = 3
 
 [5]
 next = 10
 bar = 0.1
-spawnRate = 1
+spawnRate = 0.75
 spawnAngleMin = 5
 spawnAngleMax = 45
 visibleTime = 0.05
+meteorRate = 25
+meteorRateGradient = 0
 
 [10]
 next = 15
 bar = 0.125
 spawnRate = 0
+meteorRate = 1
 
 [15]
 next = 120
@@ -41,6 +49,8 @@ spawnRate = 0.5
 spawnAngleMin = 30
 spawnAngleMax = 60
 visibleTime = 0.1
+meteorRate = 2
+meteorRateGradient = 1
 
 [120]
 bar = 1
