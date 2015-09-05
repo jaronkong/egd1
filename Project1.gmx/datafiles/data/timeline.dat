@@ -28,7 +28,7 @@ spawnAngleMinGradient = 1
 spawnAngleMax = 30
 spawnAngleMaxGradient = 1
 
-visibleTime = 1
+visibleTime = 0.5
 
 meteorRateGradient = 1
 meteorRate = 2.7
@@ -43,7 +43,7 @@ spawnAngleMax = 40
 spawnAngleMaxGradient = 1
 
 spawnRate = 1
-meteorRate = 5
+meteorRate = 40
 
 [36]
 next = 48
@@ -56,7 +56,7 @@ spawnAngleMaxGradient = 1
 visibleTime = 0.8
 
 spawnRate = 0.8
-meteorRate = 2.7
+meteorRate = 4
 meteorRateGradient = 0
 
 [48]
@@ -70,7 +70,7 @@ spawnAngleMaxGradient = 1
 visibleTime = 2
 
 spawnRate = 1
-meteorRate = 0.9
+meteorRate = 3
 meteorRateGradient = 0
 
 [59]
@@ -84,7 +84,7 @@ spawnAngleMaxGradient = 1
 visibleTime = 0.5
 
 spawnRate = 1
-meteorRate = 2
+meteorRate = 10
 meteorRateGradient = 0
 
 [72]
@@ -98,7 +98,7 @@ spawnAngleMaxGradient = 1
 visibleTime = 0.5
 
 spawnRate = 0.4
-meteorRate = 2
+meteorRate = 20
 meteorRateGradient = 0
 
 [83]
@@ -109,7 +109,7 @@ spawnAngleMinGradient = 1
 spawnAngleMax = 30
 spawnAngleMaxGradient = 1
 
-visibleTime = 1
+visibleTime = 0.4
 
 spawnRate = 0.4
 meteorRate = 1.5
@@ -118,7 +118,7 @@ meteorRateGradient = 0
 [95]
 next = 107
 
-spawnBurst = 2
+spawnBurst = 4
 spawnBurstIndex = 1
 
 spawnAngleMin = 15
@@ -129,7 +129,7 @@ spawnAngleMaxGradient = 1
 visibleTime = 0.5
 
 spawnRate = 0.6
-meteorRate = 6
+meteorRate = 50
 meteorRateGradient = 0
 
 [107]
@@ -143,5 +143,5 @@ spawnAngleMaxGradient = 1
 visibleTime = 0.5
 
 spawnRate = 0.2
-meteorRate = 0.5
+meteorRate = 1
 meteorRateGradient = 1

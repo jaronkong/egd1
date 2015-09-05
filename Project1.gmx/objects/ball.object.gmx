@@ -31,7 +31,7 @@ visibleTime = room_speed * timelineGetValue( "visibleTime" );
 
 currentAlpha = 1;
 targetAlpha = 1;
-alphaTween = 0.05;
+alphaTween = 0.1;
 
 radius = 32;
 color = c_black;
