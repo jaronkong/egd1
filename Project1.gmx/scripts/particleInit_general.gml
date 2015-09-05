@@ -46,7 +46,7 @@ ds_map_add( global.particleMap, "burstSpread", pBurstSpread );
 pLaserLine = part_type_create();
 part_type_sprite(pLaserLine, particle_sphere_spr, 0, 0, 0 );
 part_type_size(pLaserLine,0.1,0.2,-0.003,0);
-part_type_scale(pLaserLine,4,0.25);
+part_type_scale(pLaserLine,5,0.25);
 part_type_color2(pLaserLine,make_color_rgb( 255, 200, 0 ), make_color_rgb( 255, 200, 255 ));
 part_type_alpha2(pLaserLine,1,0);
 part_type_speed(pLaserLine,0,3,0,0);
