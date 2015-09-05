@@ -101,6 +101,8 @@ targetTitleAlpha = 0;
 
 startButtonTargetAlpha = 0;
 
+audio_play_sound( waterDrop_sd, 1, false );
+
 with ( controller ) {
     targetFieldWidth = baseFieldWidth;
     fieldTweenDelay = room_speed * 0.35;

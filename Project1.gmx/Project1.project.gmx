@@ -25,7 +25,11 @@
     </datafiles>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\waterDrop_sd</sound>
+    <sound>sound\subHit_sd</sound>
+    <sound>sound\Starfall_bgm</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
