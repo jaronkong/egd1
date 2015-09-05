@@ -59,7 +59,7 @@
     </scripts>
     <scripts name="TitleControl">
       <script>scripts\titleShow.gml</script>
-      <script>scripts\titleHide.gml</script>
+      <script>scripts\gameStart.gml</script>
     </scripts>
     <script>scripts\createAngleEffect.gml</script>
     <script>scripts\createBurstEffect.gml</script>
@@ -102,6 +102,7 @@
       <object>objects\burstEffect</object>
       <object>objects\startBurst</object>
     </objects>
+    <object>objects\gameoverActivate</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
