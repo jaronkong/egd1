@@ -106,6 +106,7 @@ audio_play_sound( waterDrop_sd, 1, false );
 with ( controller ) {
     targetFieldWidth = baseFieldWidth;
     fieldTweenDelay = room_speed * 0.35;
+    event_user( 1 );
 }
 
 with ( instance_create( startButtonX, startButtonY, startBurst ) ) {
@@ -143,6 +144,7 @@ startButtonTargetAlpha = 1;
 
 with ( controller ) {
     targetFieldWidth = room_width;
+    event_user( 0 );
 }
 
 
