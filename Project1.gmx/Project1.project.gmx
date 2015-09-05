@@ -44,6 +44,7 @@
       <sprite>sprites\particle_sphere_spr</sprite>
     </sprites>
     <sprite>sprites\sprite14</sprite>
+    <sprite>sprites\floorGradient_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\layer0_bg</background>
@@ -85,6 +86,9 @@
     <script>scripts\createBurstEffect.gml</script>
     <script>scripts\timelineIsTime.gml</script>
     <script>scripts\timelineWasTime.gml</script>
+    <scripts name="GameFlow">
+      <script>scripts\endGame.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\bloom_sdr.shader</shader>

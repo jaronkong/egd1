@@ -28,7 +28,7 @@
             <string>///Setup
 
 flashAlpha = 0.8;
-flashTween = 0.05;
+flashTween = 0.03;
 
 alarm[ 0 ] = room_speed * 2;
 
@@ -54,7 +54,35 @@ alarm[ 0 ] = room_speed * 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>titleShow();
+            <string>///Back to title
+titleShow();
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tween
+
+flashAlpha = lerp( flashAlpha, 0, flashTween );
+
 </string>
           </argument>
         </arguments>
@@ -84,6 +112,17 @@ draw_set_alpha( flashAlpha );
 draw_rectangle( view_xview, view_yview, 
                 view_xview + view_wview, view_yview + view_hview, false );
 
+var tSpriteWidth = sprite_get_width( floorGradient_spr );
+var tSpriteHeight = sprite_get_height( floorGradient_spr );
+
+var tFieldCenter = controller.fieldCenter;
+var tFieldWidth = controller.fieldWidth;
+
+draw_sprite_ext( floorGradient_spr, 0, tFieldCenter, view_yview + view_hview,
+                    tFieldWidth / tSpriteWidth, 400 / tSpriteHeight, 
+                    0, c_white, flashAlpha * 3 );
+
+                
 </string>
           </argument>
         </arguments>
