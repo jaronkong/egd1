@@ -25,16 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set current rate and offset
+            <string>///Define song time
 
-spawnRate = 1; //Spawn interval
-spawnTime = 0; //Time to spawn next ball
+time = 0;
+timeLast = time;
+
+timeStart = get_timer( );
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,19 +53,10 @@ spawnTime = 0; //Time to spawn next ball
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Spawn balls
+            <string>///Update time
 
-//Skip missed cues
-while ( timelineWasTime( spawnTime ) ) {
-    spawnTime += spawnRate;
-}
-
-//Spawn things for this frame
-while ( timelineIsTime( spawnTime ) ) {
-    var px = ( room_width / 2 );
-    instance_create( px, 0, ball );
-    spawnTime += spawnRate;
-}
+timeLast = time;
+time = ( ( get_timer( ) - timeStart ) / 1000000 );
 </string>
           </argument>
         </arguments>

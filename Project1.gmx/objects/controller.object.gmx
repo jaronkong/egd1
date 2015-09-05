@@ -59,7 +59,9 @@ fieldCenter = room_width / 2;
             <kind>1</kind>
             <string>///Other controllers
 
+instance_create( 0, 0, timelineController );
 instance_create( 0, 0, backgroundController );
+instance_create( 0, 0, spawnController );
 
 </string>
           </argument>
