@@ -31,7 +31,9 @@ x = room_width / 2;
 
 aimDir = 0;
 fireTimer = 0;
-fireRate = room_speed * 0.4
+fireRate = room_speed * 0.4;
+fireQuickTime = room_speed * 0.1;
+laserRange = 600;
 
 laserResolution = 32;
 
@@ -39,6 +41,8 @@ system1 = part_system_create();
 bloom_attachParticleSystem( system1, -50 );
 refracton_attachParticleSystem( system1 );
 distortionGlow_attachParticleSystem( system1 );
+
+
 
 </string>
           </argument>
@@ -120,7 +124,7 @@ if ( mouse_check_button_pressed( mb_left ) ) {
         audio_play_sound( shoot_sd, 1, false );
         
         part_type_direction( getParticle( "laserLine" ), aimDir, aimDir, 0, 0 );
-        for ( var i = 0; i &lt; room_width; i += laserResolution ) {
+        for ( var i = 0; i &lt; laserRange; i += laserResolution ) {
 
             part_particles_create( system1,
                                     x + lengthdir_x( i, aimDir ),
@@ -129,8 +133,11 @@ if ( mouse_check_button_pressed( mb_left ) ) {
         }
     
         with ( ball ) {
-            if( isCircleHitByLine( other.x, other.y, other.aimDir, x, y, radius ) ) {
+            if( isCircleHitByLine( other.x, other.y, other.aimDir, other.laserRange, x, y, radius ) ) {
                 destroyBall( id );
+                with ( other ) {
+                    fireTimer = fireQuickTime;
+                }
             }
         }
         
