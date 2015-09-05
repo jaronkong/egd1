@@ -1,14 +1,17 @@
 [0]
 next = 1
+bar = 0
 spawnRate = 0
 visibleTime = 4
 
 [1]
 next = 5
+bar = 0
 spawnRate = 1
 
 [5]
 next = 10
+bar = 0.1
 spawnRate = 5
 visibleTime = 1
 
@@ -17,5 +20,9 @@ next = 15
 spawnRate = 0
 
 [15]
+next = 120
 spawnRate = 3
 visibleTime = 2
+
+[120]
+bar = 1

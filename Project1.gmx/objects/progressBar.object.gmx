@@ -25,45 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setup
+            <string>///Store progress
 
-fieldWidth = room_width;
-targetFieldWidth = fieldWidth;
-
-baseFieldWidth = 400
-
-fieldTweenDelay = 0;
-fieldTween = 0.2;
-
-fieldCenter = room_width / 2;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Other controllers
-
-instance_create( 0, 0, timelineController );
-instance_create( 0, 0, backgroundController );
-instance_create( 0, 0, spawnController );
-
-instance_create( 0, 0, progressBar );
+progress = 0;
 </string>
           </argument>
         </arguments>
@@ -86,16 +50,9 @@ instance_create( 0, 0, progressBar );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Tween
+            <string>///Update progress
 
-if ( fieldTweenDelay &lt;= 0 ) {
-    fieldWidth = lerp( fieldWidth, targetFieldWidth, fieldTween );
-    
-}
-else {
-    fieldTweenDelay --;
-}
-
+progress = timelineGetValue( "bar" );
 </string>
           </argument>
         </arguments>
@@ -118,22 +75,33 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw field width
+            <string>///Draw the bar
 
-var tCenterX = fieldCenter;
-var tFieldHalfWidth = fieldWidth / 2;
+var tMargin = 8;
+var tHeight = 12;
 
-draw_set_color( c_dkgray );
-draw_set_alpha( 0.2 );
+var tLeft = tMargin;
+var tRight = ( room_width - tMargin );
+var tTop = tMargin;
+var tMiddle = ( tMargin + tHeight );
+var tBottom = ( tMargin + tHeight + tHeight );
 
-draw_rectangle( tCenterX + tFieldHalfWidth, view_yview,
-                view_xview + view_wview, view_yview + view_hview, 
-                false );
+draw_set_color( c_white );
+draw_set_alpha( 1 );
 
-draw_rectangle( view_xview, view_yview,
-                tCenterX - tFieldHalfWidth, view_yview + view_hview, 
-                false );
+draw_line( tLeft, tTop, tLeft, tBottom );
+draw_line( tRight, tTop, tRight, tBottom );
+draw_line( tLeft, tMiddle, tRight, tMiddle );
 
+if ( progress &gt; 0 ) {
+    tMargin = 3;
+    var tDist = ( ( tRight - tLeft - ( 2 * tMargin ) ) * progress );
+    draw_rectangle( ( tLeft + tMargin ), ( tTop + 1 ),
+        ( tLeft + tMargin + tDist ), tBottom, false );
+}
+
+draw_set_color( c_white );
+draw_set_alpha( 1 );
 </string>
           </argument>
         </arguments>
