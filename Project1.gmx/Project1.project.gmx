@@ -3,11 +3,91 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="3" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\smokeNormal_spr</sprite>
+    <sprites name="Particles">
+      <sprite>sprites\particle_explosion_spr</sprite>
+      <sprite>sprites\particle_fire_spr</sprite>
+      <sprite>sprites\particle_flare_spr</sprite>
+      <sprite>sprites\particle_offsetFlare_spr</sprite>
+      <sprite>sprites\particle_lightning_spr</sprite>
+      <sprite>sprites\particle_line_spr</sprite>
+      <sprite>sprites\particle_ring_spr</sprite>
+      <sprite>sprites\particle_smoke_spr</sprite>
+      <sprite>sprites\particle_snow_spr</sprite>
+      <sprite>sprites\particle_spark_spr</sprite>
+      <sprite>sprites\particle_sphere_spr</sprite>
+    </sprites>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Effects">
+      <script>scripts\createLightBurst.gml</script>
+      <script>scripts\createLightBurstAtPosition.gml</script>
+      <script>scripts\createLightWhirl.gml</script>
+      <script>scripts\createLightWhirlAtPosition.gml</script>
+      <script>scripts\createLightWhirlSingle.gml</script>
+      <script>scripts\burstBlurParticle.gml</script>
+      <script>scripts\lighting_createLightBurst.gml</script>
+      <script>scripts\lightingInitProperties.gml</script>
+      <script>scripts\bloom_addToQueue.gml</script>
+      <script>scripts\bloom_attachParticleSystem.gml</script>
+      <script>scripts\distortionGlow_addToQueue.gml</script>
+      <script>scripts\distortionGlow_attachParticleSystem.gml</script>
+      <script>scripts\refracton_attachParticleSystem.gml</script>
+      <script>scripts\refraction_addToQueue.gml</script>
+      <script>scripts\effects_surfaceInit.gml</script>
+      <script>scripts\effects_getShaderSurface.gml</script>
+      <script>scripts\effects_globalSurfaceExists.gml</script>
+      <script>scripts\shakeScreen.gml</script>
+    </scripts>
+    <scripts name="Particles">
+      <script>scripts\initGlobalPartMap.gml</script>
+      <script>scripts\getParticle.gml</script>
+      <script>scripts\particleInit_general.gml</script>
+    </scripts>
+    <script>scripts\createAngleEffect.gml</script>
+  </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\bloom_sdr.shader</shader>
+    <shader type="GLSLES">shaders\distortionGlow_sdr.shader</shader>
+    <shader type="GLSLES">shaders\refraction_sdr.shader</shader>
+  </shaders>
+  <objects name="objects">
+    <object>objects\ball</object>
+    <object>objects\controller</object>
+    <objects name="Effects">
+      <objects name="Bloom">
+        <object>objects\bloomableGlowEffect</object>
+        <object>objects\bloomablePar</object>
+        <object>objects\bloomController</object>
+        <object>objects\bloomParticleController</object>
+        <object>objects\bloomParticleDrawer</object>
+      </objects>
+      <objects name="Distortion">
+        <object>objects\distortionGlowController</object>
+        <object>objects\distortionGlowPar</object>
+        <object>objects\distortionGlowParticleDrawer</object>
+      </objects>
+      <objects name="Refraction">
+        <object>objects\refractionController</object>
+        <object>objects\refractionEffectPar</object>
+        <object>objects\refractionNormalPar</object>
+        <object>objects\refractionParticleDrawer</object>
+      </objects>
+      <object>objects\effectsGlobalCon</object>
+      <object>objects\bounceEffect</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\Main_rm</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
