@@ -1,9 +1,13 @@
 [0]
-next = 1
-bar = 0
+next = 0.8
+bar = 1
 barGradient = 1
 spawnRate = 0
 visibleTime = 4
+
+[0.8]
+next = 1
+bar = 0
 
 [1]
 next = 5

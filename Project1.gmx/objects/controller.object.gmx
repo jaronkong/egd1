@@ -59,11 +59,7 @@ fieldCenter = room_width / 2;
             <kind>1</kind>
             <string>///Other controllers
 
-instance_create( 0, 0, timelineController );
 instance_create( 0, 0, backgroundController );
-instance_create( 0, 0, spawnController );
-
-instance_create( 0, 0, progressBar );
 </string>
           </argument>
         </arguments>
@@ -96,6 +92,61 @@ else {
     fieldTweenDelay --;
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create controllers
+
+instance_create( 0, 0, timelineController );
+instance_create( 0, 0, spawnController );
+
+instance_create( 0, 0, progressBar );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy controllers
+
+with ( timelineController ) instance_destroy( );
+with ( spawnController ) instance_destroy( );
+with ( progressBar ) instance_destroy( );
 </string>
           </argument>
         </arguments>
