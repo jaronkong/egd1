@@ -117,6 +117,8 @@ else {
             <string>///Create controllers
 
 instance_create( 0, 0, timelineController );
+audio_play_sound( Starfall_bgm, 1, false );
+
 instance_create( 0, 0, spawnController );
 
 instance_create( 0, 0, progressBar );

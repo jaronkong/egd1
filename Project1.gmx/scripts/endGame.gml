@@ -1,5 +1,7 @@
 ///endGame();
 
+audio_stop_sound( Starfall_bgm );
+
 with ( ball ) {
     instance_destroy();
 }
