@@ -3,31 +3,12 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="4" name="datafiles">
-    <datafiles number="4" name="data">
-      <datafile>
-        <name>timeline.dat</name>
-        <exists>-1</exists>
-        <size>1592</size>
-        <exportAction>2</exportAction>
-        <exportDir></exportDir>
-        <overwrite>0</overwrite>
-        <freeData>-1</freeData>
-        <removeEnd>0</removeEnd>
-        <store>0</store>
-        <ConfigOptions>
-          <Config name="Default">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-        </ConfigOptions>
-        <filename>timeline.dat</filename>
-      </datafile>
-    </datafiles>
-  </datafiles>
+  <datafiles number="3" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\waterDrop_sd</sound>
     <sound>sound\subHit_sd</sound>
+    <sound>sound\Starfall_bgm</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
@@ -90,10 +71,6 @@
     <scripts name="GameFlow">
       <script>scripts\endGame.gml</script>
     </scripts>
-    <scripts name="Timeline">
-      <script>scripts\timelineIsTime.gml</script>
-      <script>scripts\timelineWasTime.gml</script>
-    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\bloom_sdr.shader</shader>
@@ -106,7 +83,6 @@
   <objects name="objects">
     <object>objects\ball</object>
     <object>objects\controller</object>
-    <object>objects\timelineController</object>
     <object>objects\backgroundController</object>
     <object>objects\spawnController</object>
     <object>objects\titleController</object>
