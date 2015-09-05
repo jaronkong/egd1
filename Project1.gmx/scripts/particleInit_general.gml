@@ -42,3 +42,16 @@ part_type_orientation(pBurstSpread, 0, 0, 0, 0, 1 );
 part_type_blend(pBurstSpread,1);
 part_type_life(pBurstSpread,25,45);
 ds_map_add( global.particleMap, "burstSpread", pBurstSpread );
+
+pStartBurst = part_type_create();
+part_type_sprite(pStartBurst, particle_sphere_spr, 0, 0, 0 );
+part_type_size(pStartBurst,0.1,0.2,0.07,0);
+part_type_scale(pStartBurst,4,0.1);
+part_type_color2(pStartBurst,make_color_rgb( 255, 200, 0 ), c_purple);
+part_type_alpha2(pStartBurst,1,0);
+part_type_speed(pStartBurst,0,0,0,0);
+part_type_direction(pStartBurst,0,0,0,0);
+part_type_orientation(pStartBurst, 0, 0, 0, 0, 1 );
+part_type_blend(pStartBurst,1);
+part_type_life(pStartBurst,25,30);
+ds_map_add( global.particleMap, "startBurst", pStartBurst );

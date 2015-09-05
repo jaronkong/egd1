@@ -23,6 +23,7 @@
       <sprite>sprites\particle_spark_spr</sprite>
       <sprite>sprites\particle_sphere_spr</sprite>
     </sprites>
+    <sprite>sprites\sprite14</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\layer0_bg</background>
@@ -56,6 +57,10 @@
       <script>scripts\getParticle.gml</script>
       <script>scripts\particleInit_general.gml</script>
     </scripts>
+    <scripts name="TitleControl">
+      <script>scripts\titleShow.gml</script>
+      <script>scripts\titleHide.gml</script>
+    </scripts>
     <script>scripts\createAngleEffect.gml</script>
     <script>scripts\createBurstEffect.gml</script>
   </scripts>
@@ -68,6 +73,8 @@
     <object>objects\ball</object>
     <object>objects\controller</object>
     <object>objects\backgroundController</object>
+    <object>objects\spawnController</object>
+    <object>objects\titleController</object>
     <objects name="Effects">
       <objects name="Bloom">
         <object>objects\bloomableGlowEffect</object>
@@ -90,6 +97,7 @@
       <object>objects\effectsGlobalCon</object>
       <object>objects\bounceEffect</object>
       <object>objects\burstEffect</object>
+      <object>objects\startBurst</object>
     </objects>
   </objects>
   <rooms name="rooms">

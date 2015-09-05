@@ -54,6 +54,7 @@
     <instance objName="controller" x="64" y="32" name="inst_D9505890" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ball" x="480" y="64" name="inst_94F5E64D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="effectsGlobalCon" x="64" y="64" name="inst_7731AA60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="titleController" x="96" y="32" name="inst_C1314E75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
