@@ -29,7 +29,7 @@
 
 timer = 0;
 
-baseTime = 1;
+baseTime = 60;
 randomTime = 3;
 
 speedTween = 0.1;
