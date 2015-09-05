@@ -6,6 +6,7 @@ with ( ball ) {
     instance_destroy();
 }
 with ( controller ) {
+    rumble += 15;
     event_user( 0 );
 }
 

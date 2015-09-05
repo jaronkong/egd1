@@ -82,8 +82,7 @@ instance_create( 0, 0, backgroundController );
             <kind>1</kind>
             <string>///Shake setup
 
-rumbleX = 0;
-rumbleY = 0;
+rumble = 0;
 </string>
           </argument>
         </arguments>
@@ -138,12 +137,12 @@ else {
             <kind>1</kind>
             <string>///Camera rumble
 
-var tProp = 0.95;
-rumbleX *= tProp;
-rumbleY *= tProp;
+var magnitude = 4;
 
-view_xview[0] = rumbleX;
-view_yview[0] = ( rumbleY * 0.75 );
+view_xview[0] = ( random_range( -magnitude, magnitude ) * rumble );
+view_yview[0] = ( random_range( -magnitude, magnitude ) * rumble );
+
+rumble *= 0.9;
 </string>
           </argument>
         </arguments>
