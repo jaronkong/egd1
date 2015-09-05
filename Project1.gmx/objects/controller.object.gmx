@@ -122,6 +122,8 @@ audio_play_sound( Starfall_bgm, 1, false );
 instance_create( 0, 0, spawnController );
 
 instance_create( 0, 0, progressBar );
+
+instance_create( 0, 0, meteorShower );
 </string>
           </argument>
         </arguments>
@@ -149,6 +151,7 @@ instance_create( 0, 0, progressBar );
 with ( timelineController ) instance_destroy( );
 with ( spawnController ) instance_destroy( );
 with ( progressBar ) instance_destroy( );
+with ( meteorShower ) instance_destroy( );
 </string>
           </argument>
         </arguments>
@@ -176,8 +179,8 @@ with ( progressBar ) instance_destroy( );
 var tCenterX = fieldCenter;
 var tFieldHalfWidth = fieldWidth / 2;
 
-draw_set_color( c_dkgray );
-draw_set_alpha( 0.2 );
+draw_set_color( c_gray );
+draw_set_alpha( 0.25 );
 
 draw_rectangle( tCenterX + tFieldHalfWidth, view_yview,
                 view_xview + view_wview, view_yview + view_hview, 
