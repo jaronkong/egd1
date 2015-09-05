@@ -5,7 +5,10 @@
   </Configs>
   <datafiles number="3" name="datafiles"/>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\waterDrop_sd</sound>
+    <sound>sound\subHit_sd</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
