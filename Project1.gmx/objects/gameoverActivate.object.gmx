@@ -28,7 +28,7 @@
             <string>///Setup
 
 flashAlpha = 0.8;
-flashTween = 0.05;
+flashTween = 0.03;
 
 alarm[ 0 ] = room_speed * 2;
 
@@ -120,7 +120,7 @@ var tFieldWidth = controller.fieldWidth;
 
 draw_sprite_ext( floorGradient_spr, 0, tFieldCenter, view_yview + view_hview,
                     tFieldWidth / tSpriteWidth, 400 / tSpriteHeight, 
-                    0, c_white, flashAlpha * 2 );
+                    0, c_white, flashAlpha * 3 );
 
                 
 </string>
