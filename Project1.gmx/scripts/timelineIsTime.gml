@@ -1,11 +1,11 @@
 ///timelineIsTime( time )
 //Returns true if that time is this frame
 
-var tTime = argument0;
+var aTime = argument0;
 
 with ( timelineController ) {
-    if ( timeLast < tTime ) {
-        if ( time >= tTime ) {
+    if ( timeLast < aTime ) {
+        if ( time >= aTime ) {
             return true;
         }
     }

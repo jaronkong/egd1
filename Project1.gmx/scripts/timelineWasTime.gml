@@ -1,10 +1,10 @@
 ///timelineWasTime( time )
 //Returns true if that time is before this frame
 
-var tTime = argument0;
+var aTime = argument0;
 
 with ( timelineController ) {
-    if ( timeLast >= tTime ) {
+    if ( timeLast >= aTime ) {
         return true;
     }
 }
