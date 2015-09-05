@@ -27,39 +27,25 @@
             <kind>1</kind>
             <string>///Setup
 
-fieldWidth = 400;
-fieldCenter = room_width / 2;
+numLayers = 3;
+parallaxFactor = 1.2; //Bigger values mean more depth
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Other controllers
+bgOffset[ 0 ] = 0;
+bgOffset[ 1 ] = 0;
+bgOffset[ 2 ] = 0;
 
-instance_create( 0, 0, backgroundController );
+bgOffsetTarget[ 0 ] = 0;
+bgOffsetTarget[ 1 ] = 0;
+bgOffsetTarget[ 2 ] = 0;
+
+bgTween = 0.03;
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -76,21 +62,41 @@ instance_create( 0, 0, backgroundController );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw field width
+            <string>///Update backgrounds
 
-var tCenterX = fieldCenter;
-var tFieldHalfWidth = fieldWidth / 2;
+for ( var i = 0; i &lt; numLayers; ++i ) {
+    bgOffset[ i ] = lerp( bgOffset[ i ], bgOffsetTarget[ i ], bgTween * parallaxFactor * i );
+    background_y[ i ] = bgOffset[ i ];
+}
 
-draw_set_color( c_dkgray );
-draw_set_alpha( 0.2 );
 
-draw_rectangle( tCenterX + tFieldHalfWidth, view_yview,
-                view_xview + view_wview, view_yview + view_hview, 
-                false );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initial Offset
 
-draw_rectangle( view_xview, view_yview,
-                tCenterX - tFieldHalfWidth, view_yview + view_hview, 
-                false );
+bgOffset[ 0 ] = 0;
+bgOffset[ 1 ] = 0;
+bgOffset[ 2 ] = 0;
 
 </string>
           </argument>
