@@ -51,18 +51,46 @@ spawnTime = 0; //Time to spawn next ball
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Update values
+
+spawnRate = timelineGetValue( "spawnRate" );
+if ( spawnRate &gt; 0 ) {
+    spawnRate = ( 1 / spawnRate );
+} else spawnRate = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Spawn balls
 
-//Skip missed cues
-while ( timelineWasTime( spawnTime ) ) {
-    spawnTime += spawnRate;
-}
-
-//Spawn things for this frame
-while ( timelineIsTime( spawnTime ) ) {
-    var px = ( room_width / 2 );
-    instance_create( px, 0, ball );
-    spawnTime += spawnRate;
+if ( spawnRate &gt; 0 ) {
+    //Skip missed cues
+    while ( timelineWasTime( spawnTime ) ) {
+        spawnTime += spawnRate;
+    }
+    
+    //Spawn things for this frame
+    while ( timelineIsTime( spawnTime ) ) {
+        var px = ( room_width / 2 );
+        instance_create( px, 0, ball );
+        spawnTime += spawnRate;
+    }
 }
 </string>
           </argument>

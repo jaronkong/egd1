@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Setup
 
-visibleTime = room_speed * 4;
+visibleTime = room_speed * timelineGetValue( "visibleTime" );
 
 currentAlpha = 1;
 targetAlpha = 1;
@@ -162,7 +162,7 @@ if ( instance_exists( controller ) ) {
             <kind>1</kind>
             <string>///Draw
 
-draw_set_color( color );
+draw_set_color( c_white );
 draw_set_alpha( currentAlpha );
 
 draw_circle( x, y, radius, false );
