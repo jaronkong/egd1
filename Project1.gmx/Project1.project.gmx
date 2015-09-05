@@ -146,6 +146,7 @@
       <object>objects\startBurst</object>
     </objects>
     <object>objects\gameoverActivate</object>
+    <object>objects\progressBar</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>

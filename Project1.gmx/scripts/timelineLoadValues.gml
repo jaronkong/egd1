@@ -12,11 +12,15 @@ if ( !ds_map_exists( tTimelines, aTag ) ) {
     ini_open( working_directory + "\data\timeline.dat" );
     
     var tCheck = "0";
+    var tGradient = false;
+    
     while ( ini_section_exists( tCheck ) ) {
         if ( ini_key_exists( tCheck, aTag ) ) {
             var tValue = ini_read_real( tCheck, aTag, 0 );
+            tGradient = ini_read_real( tCheck, aTag + "Gradient", tGradient );
             tTimeline[tLength, 0] = real( tCheck );
             tTimeline[tLength, 1] = tValue;
+            tTimeline[tLength, 2] = tGradient;
             tLength += 1;
         }
         if ( !ini_key_exists( tCheck, "next" ) ) break;
