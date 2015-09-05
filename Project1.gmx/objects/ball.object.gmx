@@ -33,7 +33,7 @@ currentAlpha = 1;
 targetAlpha = 1;
 alphaTween = 0.05;
 
-radius = 16;
+radius = 32;
 color = c_black;
 
 direction = 330;
