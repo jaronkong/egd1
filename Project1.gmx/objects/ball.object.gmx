@@ -125,13 +125,15 @@ if ( instance_exists( controller ) ) {
     
     if ( x + radius &gt; tMaxX ) {
         x = tMaxX - radius;
+        var tDirPrev = ( direction - 180 );
         hspeed = -hspeed;
-        createAngleEffect( x + radius, y, 0, 120 );
+        createAngleEffect( x + radius, y, direction, tDirPrev );
     }
     if ( x - radius &lt; tMinX ) {
         x = tMinX + radius;
+        var tDirPrev = ( direction - 180 );
         hspeed = -hspeed;
-        createAngleEffect( x - radius, y, 0, 120 );
+        createAngleEffect( x - radius, y, direction, tDirPrev );
     }
     
 }
