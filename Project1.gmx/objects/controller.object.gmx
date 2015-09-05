@@ -27,7 +27,14 @@
             <kind>1</kind>
             <string>///Setup
 
-fieldWidth = 400;
+fieldWidth = room_width;
+targetFieldWidth = fieldWidth;
+
+baseFieldWidth = 400
+
+fieldTweenDelay = 0;
+fieldTween = 0.2;
+
 fieldCenter = room_width / 2;
 
 </string>
@@ -53,6 +60,38 @@ fieldCenter = room_width / 2;
             <string>///Other controllers
 
 instance_create( 0, 0, backgroundController );
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tween
+
+if ( fieldTweenDelay &lt;= 0 ) {
+    fieldWidth = lerp( fieldWidth, targetFieldWidth, fieldTween );
+    
+}
+else {
+    fieldTweenDelay --;
+}
 
 </string>
           </argument>

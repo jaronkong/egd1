@@ -94,10 +94,17 @@ startButtonCurrentAlpha = lerp( startButtonCurrentAlpha, startButtonTargetAlpha,
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Hide
+            <string>///Start Game
 
 targetTitleY = view_yview + 100;
 targetTitleAlpha = 0;
+
+startButtonTargetAlpha = 0;
+
+with ( controller ) {
+    targetFieldWidth = baseFieldWidth;
+    fieldTweenDelay = room_speed * 0.35;
+}
 
 with ( instance_create( startButtonX, startButtonY, startBurst ) ) {
     event_user( 0 );
@@ -130,6 +137,13 @@ with ( instance_create( startButtonX, startButtonY, startBurst ) ) {
 targetTitleY = view_yview + 100 + 64;
 targetTitleAlpha = 1;
 
+startButtonTargetAlpha = 1;
+
+with ( controller ) {
+    targetFieldWidth = room_width;
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -157,6 +171,12 @@ targetTitleAlpha = 1;
 draw_sprite_ext( sprite14, 0, currentTitleX, currentTitleY,
                     1, 1, 0, c_white, currentTitleAlpha );
 
+draw_set_font( main_ft );
+draw_set_halign( fa_center );
+draw_set_valign( fa_center );
+draw_text_colour( startButtonX, startButtonY, "Start",
+                        c_white, c_white, c_white, c_white, startButtonCurrentAlpha );
+                    
 </string>
           </argument>
         </arguments>

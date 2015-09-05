@@ -69,6 +69,9 @@
     <shader type="GLSLES">shaders\distortionGlow_sdr.shader</shader>
     <shader type="GLSLES">shaders\refraction_sdr.shader</shader>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\main_ft</font>
+  </fonts>
   <objects name="objects">
     <object>objects\ball</object>
     <object>objects\controller</object>
