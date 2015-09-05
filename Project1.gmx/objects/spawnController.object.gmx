@@ -49,6 +49,29 @@ spawnTime = 0; //Time to spawn next ball
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Set burst state
+
+burstIndex = -1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Set spawn position
 
 x = ( room_width / 2 );
@@ -78,7 +101,7 @@ angleMax = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Update values
+            <string>///Update spawn values
 
 spawnRate = timelineGetValue( "spawnRate" );
 if ( spawnRate &gt; 0 ) {
@@ -107,7 +130,7 @@ angleMax = timelineGetValue( "spawnAngleMax" );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Spawn balls
+            <string>///Spawn balls via rate
 
 if ( spawnRate &gt; 0 ) {
     //Skip missed cues
@@ -117,12 +140,65 @@ if ( spawnRate &gt; 0 ) {
     
     //Spawn things for this frame
     while ( timelineIsTime( spawnTime ) ) {
-        var tAngle = random_range( angleMin, angleMax );
-        var tBall = instance_create( x, y, ball );
-        tBall.direction = choose( ( 180 + tAngle ), -tAngle );
+        event_user( 1 );
         spawnTime += spawnRate;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Burst spawns
+
+var tBurst = timelineGetValue( "spawnBurstIndex" );
+if ( tBurst &gt; burstIndex ) {
+    tCount = timelineGetValue( "spawnBurst" );
+    repeat ( tCount ) event_user( 1 );
+    burstIndex = tBurst;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawn a ball
+
+var tAngle = random_range( angleMin, angleMax );
+var tBall = instance_create( x, y, ball );
+tBall.direction = choose( ( 180 + tAngle ), -tAngle );
 </string>
           </argument>
         </arguments>
