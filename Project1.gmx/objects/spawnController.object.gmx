@@ -33,6 +33,33 @@ spawnTime = 0; //Time to spawn next ball
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Set spawn position
+
+x = ( room_width / 2 );
+y = 0;
+
+angleMin = 15;
+angleMax = 60;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -57,6 +84,9 @@ spawnRate = timelineGetValue( "spawnRate" );
 if ( spawnRate &gt; 0 ) {
     spawnRate = ( 1 / spawnRate );
 } else spawnRate = 0;
+
+angleMin = timelineGetValue( "spawnAngleMin" );
+angleMax = timelineGetValue( "spawnAngleMax" );
 </string>
           </argument>
         </arguments>
@@ -87,11 +117,59 @@ if ( spawnRate &gt; 0 ) {
     
     //Spawn things for this frame
     while ( timelineIsTime( spawnTime ) ) {
-        var px = ( room_width / 2 );
-        instance_create( px, 0, ball );
+        var tAngle = random_range( angleMin, angleMax );
+        var tBall = instance_create( x, y, ball );
+        tBall.direction = choose( ( 180 + tAngle ), -tAngle );
         spawnTime += spawnRate;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw tracers
+
+draw_set_color( c_white );
+draw_set_alpha( 1 );
+
+var tDist = 128;
+
+draw_line( x, y,
+    x + lengthdir_x( tDist, -angleMin ),
+    y + lengthdir_y( tDist, -angleMin ) );
+
+draw_line( x, y,
+    x + lengthdir_x( tDist, -angleMax ),
+    y + lengthdir_y( tDist, -angleMax ) );
+
+draw_line( x, y,
+    x + lengthdir_x( tDist, 180 + angleMin ),
+    y + lengthdir_y( tDist, 180 + angleMin ) );
+
+draw_line( x, y,
+    x + lengthdir_x( tDist, 180 + angleMax ),
+    y + lengthdir_y( tDist, 180 + angleMax ) );
+
+draw_set_color( c_white );
+draw_set_alpha( 1 );
 </string>
           </argument>
         </arguments>
