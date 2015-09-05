@@ -84,10 +84,12 @@
     </scripts>
     <script>scripts\createAngleEffect.gml</script>
     <script>scripts\createBurstEffect.gml</script>
-    <script>scripts\timelineIsTime.gml</script>
-    <script>scripts\timelineWasTime.gml</script>
     <scripts name="GameFlow">
       <script>scripts\endGame.gml</script>
+    </scripts>
+    <scripts name="Timeline">
+      <script>scripts\timelineIsTime.gml</script>
+      <script>scripts\timelineWasTime.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
