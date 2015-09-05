@@ -97,6 +97,7 @@
       <script>scripts\timelineWasTime.gml</script>
       <script>scripts\timelineNotYetTime.gml</script>
       <script>scripts\timelineGetValue.gml</script>
+      <script>scripts\timelineLoadValues.gml</script>
     </scripts>
     <scripts name="GameActions">
       <script>scripts\isCircleHitByLine.gml</script>

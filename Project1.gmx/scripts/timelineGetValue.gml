@@ -7,20 +7,13 @@ if ( argument_count > 1 ) {
     aTime = argument[1];
 }
 
-var tCheck = "0";
-var tValue = 0;
+var tTimeline = timelineLoadValues( aTag );
+var tLength = array_length_1d( tTimeline );
 
-ini_open( working_directory + "\data\timeline.dat" );
-
-while ( ini_section_exists( tCheck ) ) {
-    if ( timelineNotYetTime( real( tCheck ) ) ) break;
-    if ( ini_key_exists( tCheck, aTag ) ) {
-        tValue = ini_read_real( tCheck, aTag, 0 );
+for ( var i = 1; i < tLength; ++i ) {
+    if ( timelineNotYetTime( tTimeline[i, 0] ) ) {
+        return tTimeline[i-1, 1];
     }
-    if ( !ini_key_exists( tCheck, "next" ) ) break;
-    tCheck = ini_read_string( tCheck, "next", "" );
 }
 
-ini_close( );
-
-return tValue;
+return tTimeline[tLength - 1, 1];
