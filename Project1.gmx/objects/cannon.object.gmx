@@ -2,7 +2,7 @@
 <object>
   <spriteName>sprite0</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -28,6 +28,7 @@
             <string>///Setup
 
 x = room_width / 2;
+y = room_height - 70;
 
 aimDir = 0;
 fireTimer = 0;
@@ -120,6 +121,7 @@ aimDir = point_direction( x, y, mouse_x, mouse_y );
 
 if ( mouse_check_button_pressed( mb_left ) ) {
     if ( fireTimer &lt;= 0 ) {
+        Gun_Fire(gun);
         fireTimer = fireRate;
         audio_play_sound( shoot_sd, 1, false );
         

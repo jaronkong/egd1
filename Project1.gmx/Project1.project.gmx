@@ -51,6 +51,9 @@
     </sprites>
     <sprite>sprites\sprite14</sprite>
     <sprite>sprites\floorGradient_spr</sprite>
+    <sprite>sprites\Gun_Cannon_spr</sprite>
+    <sprite>sprites\Gun_Body_spr</sprite>
+    <sprite>sprites\Gun_Reload_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\layer0_bg</background>
@@ -103,6 +106,12 @@
       <script>scripts\isCircleHitByLine.gml</script>
       <script>scripts\destroyBall.gml</script>
     </scripts>
+    <scripts name="Gun">
+      <script>scripts\Gun_Initialization.gml</script>
+      <script>scripts\Gun_Draw.gml</script>
+      <script>scripts\Gun_Fire.gml</script>
+      <script>scripts\Draw_Gear.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\bloom_sdr.shader</shader>
@@ -147,6 +156,7 @@
     <object>objects\gameoverActivate</object>
     <object>objects\progressBar</object>
     <object>objects\meteorShower</object>
+    <object>objects\gun</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
