@@ -192,9 +192,12 @@ if ( y &gt; room_height ) {
             <string>///Draw
 
 draw_set_color( c_white );
-draw_set_alpha( currentAlpha );
 
+draw_set_alpha( currentAlpha * 0.25 );
 draw_circle( x, y, radius, false );
+
+draw_set_alpha( currentAlpha );
+draw_circle( x, y, radius, true );
 
 
 </string>
