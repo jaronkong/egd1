@@ -36,22 +36,22 @@ else {
 // Under Gears
 Draw_Gear(x-xOffset1,y+10,lRadius,8,rotation+lOffset,g_color);
 Draw_Gear(x-xOffset2,y-yOffset2+10,sRadius,4,-2*rotation+sOffset,g_color);
-Draw_Gear(x-xOffset2,y+yOffset2+10,sRadius,4,-2*rotation+sOffset,g_color);
+//Draw_Gear(x-xOffset2,y+yOffset2+10,sRadius,4,-2*rotation+sOffset,g_color);
 
 Draw_Gear(x+xOffset1,y+10,lRadius,8,rotation+lOffset,g_color);
 Draw_Gear(x+xOffset2,y-yOffset2+10,sRadius,4,-2*rotation+sOffset,g_color);
-Draw_Gear(x+xOffset2,y+yOffset2+10,sRadius,4,-2*rotation+sOffset,g_color);
+//Draw_Gear(x+xOffset2,y+yOffset2+10,sRadius,4,-2*rotation+sOffset,g_color);
 
 Draw_Gear(x,y-yOffset3+10,sRadius,4,rotation*2.0-.05,g_color);
 
 // Over Gears
 Draw_Gear(x-xOffset1,y,lRadius,8,rotation+lOffset,g_color2);
 Draw_Gear(x-xOffset2,y-yOffset2,sRadius,4,-2*rotation+sOffset,g_color2);
-Draw_Gear(x-xOffset2,y+yOffset2,sRadius,4,-2*rotation+sOffset,g_color2);
+//Draw_Gear(x-xOffset2,y+yOffset2,sRadius,4,-2*rotation+sOffset,g_color2);
 
 Draw_Gear(x+xOffset1,y,lRadius,8,rotation+lOffset,g_color2);
 Draw_Gear(x+xOffset2,y-yOffset2,sRadius,4,-2*rotation+pi/4,g_color2);
-Draw_Gear(x+xOffset2,y+yOffset2,sRadius,4,-2*rotation+pi/4,g_color2);
+//Draw_Gear(x+xOffset2,y+yOffset2,sRadius,4,-2*rotation+pi/4,g_color2);
 
 Draw_Gear(x,y-yOffset3,sRadius,4,rotation*2.0-.05,g_color2);
 draw_set_color(g_color2);
