@@ -4,6 +4,8 @@ next = 0.1
 bar = 1
 barGradient = 1
 
+spawnPos = 0
+spawnPosGradient = 1
 spawnRate = 0.25
 spawnAngleMin = 15
 spawnAngleMinGradient = 1
@@ -135,6 +137,7 @@ meteorRateGradient = 0
 [107]
 bar = 1
 
+spawnPos = 0
 spawnAngleMin = 15
 spawnAngleMinGradient = 1
 spawnAngleMax = 30

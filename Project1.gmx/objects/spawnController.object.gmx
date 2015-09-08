@@ -103,6 +103,11 @@ angleMax = 60;
             <kind>1</kind>
             <string>///Update spawn values
 
+var tProp = timelineGetValue( "spawnPos" );
+var tHalfWidth = ( controller.fieldWidth / 2 );
+var tCenter = controller.fieldCenter;
+x = ( lerp( 0, tHalfWidth, tProp ) + tCenter );
+
 spawnRate = timelineGetValue( "spawnRate" );
 if ( spawnRate &gt; 0 ) {
     spawnRate = ( 1 / spawnRate );
