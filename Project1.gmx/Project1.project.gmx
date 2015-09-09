@@ -54,6 +54,8 @@
     <sprite>sprites\Gun_Cannon_spr</sprite>
     <sprite>sprites\Gun_Body_spr</sprite>
     <sprite>sprites\Gun_Reload_spr</sprite>
+    <sprite>sprites\Star_In_spr</sprite>
+    <sprite>sprites\Star_Out_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\layer0_bg</background>
@@ -112,6 +114,11 @@
       <script>scripts\Gun_Fire.gml</script>
       <script>scripts\Draw_Gear.gml</script>
     </scripts>
+    <scripts name="Star Victory">
+      <script>scripts\Star_Pulse.gml</script>
+      <script>scripts\Star_Init.gml</script>
+      <script>scripts\Star_Effect_Step.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\bloom_sdr.shader</shader>
@@ -157,6 +164,8 @@
     <object>objects\progressBar</object>
     <object>objects\meteorShower</object>
     <object>objects\gun</object>
+    <object>objects\Star_Victory</object>
+    <object>objects\Star_Effect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>

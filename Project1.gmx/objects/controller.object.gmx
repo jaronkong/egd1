@@ -37,6 +37,10 @@ fieldTween = 0.2;
 
 fieldCenter = room_width / 2;
 
+instance_create(room_width * .50,room_height * .33,Star_Victory);
+instance_create(room_width * .40,room_height * .33,Star_Victory);
+instance_create(room_width * .60,room_height * .33,Star_Victory);
+instance_deactivate_object(Star_Victory);
 </string>
           </argument>
         </arguments>
@@ -169,6 +173,7 @@ if ( timelineIsTime( 110 ) ) {
     event_user( 0 );
     with ( ball ) instance_destroy( );
     titleShow( );
+    instance_activate_object(Star_Victory);
 }
 </string>
           </argument>
